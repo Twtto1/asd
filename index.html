@@ -2,26 +2,114 @@
 <html>
 
 <head>
-    <title>My HTML Page</title>
+    <p style="background.jpg');"></p>
+    <style>
+        /* Add some styling for the blog page */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-container img {
+            max-width: 800px;
+            height: auto;
+            margin: 20px;
+        }
+
+        .lock-button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #800020;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lock-button:hover {
+            background-color: #40E0D0;
+        }
+    </style>
 </head>
+<script src="password.js"></script>
+<p style="background-image: url('background.jpg');"></p>
 
 <body>
-    <img src="download.jpg" alt="My Image">
+    <!-- Lock overlay -->
+    <div id="lock-overlay">
+        <div class="container">
+            <h1>This page is locked</h1>
+            <button type="button" onclick="checkPassword()" class="lock-button">Unlock Page</button>
+        </div>
+    </div>
 
-    <h1>My HTML Page</h1>
-    <p>Welcome to my HTML page!</p>
-    <ul>
-        <li><a href="#images">Images</a></li>
-        <li><a href="#videos">Videos</a></li>
-    </ul>
-    <h2 id="images">Images</h2>
-    <p>Placeholder for images</p>
-    <h2 id="videos">Videos</h2>
-    <p>Placeholder for videos</p>
-    <video width="320" height="240" controls>
-        <source src="asd3.mpg" type="video/mpg">
-        Your browser does not support the video tag.
-    </video>
-</body>
+    <div class="container">
+        <h1>My Blog</h1>
 
-</html>
+        <!-- Video 1 -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/watch?v=Okve5wSmg-s&ab_channel=RoyaltyFreeMusic-NoCopyrightMusic"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit risus
+            pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin in,
+            efficitur a justo. Duis id ultricies tellus, vel sodales odio. In hac habitasse platea dictumst. Suspendisse
+            potenti. Vivamus id ultricies elit, a condimentum elit. Proin porttitor metus sed justo fringilla, id
+            egestas lacus luctus. Maecenas vitae nulla non tellus sollicitudin dictum. Aliquam euismod, ipsum a aliquam
+            dignissim, arcu ligula cursus purus, in gravida tellus lacus non ante. Duis sit amet dictum velit.</p>
+
+        <!-- Image 1 -->
+        <div class="image-container">
+            <img src="1.webp" alt="Image 1">
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit risus
+            pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin in,
+            efficitur a justo. Duis id ultricies tellus, vel sodales odio. In </p>
+        <div class="container">
+            <h1>My Blog</h1>
+
+            <!-- Video 1 -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit
+                risus pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin
+                in, efficitur a justo. Duis id ultricies tellus, vel sodales odio. In hac habitasse platea dictumst.
+                Suspendisse potenti. Vivamus id ultricies elit, a condimentum elit. Proin porttitor metus sed justo
+                fringilla, id egestas lacus luctus. Maecenas vitae nulla non tellus sollicitudin dictum. Aliquam
+                euismod, ipsum a aliquam dignissim, arcu ligula cursus purus, in gravida tellus lacus non ante. Duis sit
+                amet dictum velit.</p>
+
+            <!-- Image 1 -->
+            <div class="image-container">
+                <img src="2.webp" alt="Image 1">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit ris
