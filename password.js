@@ -11,3 +11,13 @@ function checkPassword() {
     alert("Incorrect password. Please try again.");
   }
 }
+function openFromBottom() {
+  // Get the height of the document
+  var height = document.body.scrollHeight;
+
+  // Scroll to the bottom of the page
+  window.scrollTo(0, height);
+}
+
+// Call the function when the page loads
+window.onload = openFromBottom;

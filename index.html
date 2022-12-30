@@ -2,114 +2,387 @@
 <html>
 
 <head>
-    <p style="background.jpg');"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+    <button onclick="check_password(1)">Log in</button>
+    <script src="varpass.js"></script>
+    <script>
+        var passwords = new Object;
+        passwords['qwe'] = 'qwe';
+
+        function check_password(tries) {
+            var username = prompt('Please enter your username');
+            var password = prompt('Please enter your password');
+            if (passwords[username] != password) {
+                if (tries == 3) {
+                    alert('Sorry, you have exceeded the maximum number of tries. The page will now close.');
+                    window.close();
+                } else {
+                    alert('Sorry, the username or password you entered is incorrect. Please try again.');
+                    check_password(tries + 1);
+                }
+            }
+        }
+        check_password(1);
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <title>Current Time, Date, and Day</title>
     <style>
-        /* Add some styling for the blog page */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        h1 {
+            font-size: 25px;
             text-align: center;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .image-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .image-container img {
-            max-width: 800px;
-            height: auto;
-            margin: 20px;
-        }
-
-        .lock-button {
-            display: block;
-            width: 200px;
-            height: 50px;
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            background-color: #800020;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .lock-button:hover {
-            background-color: #40E0D0;
+            color: rgb(23, 24, 26);
         }
     </style>
+    <style>
+        body {
+            background-image: url('background1.gif');
+            color: rgb(160, 45, 141)
+        }
+    </style>
+    <button onclick="scrollDown()">Buutt on Down</button>
+
+    <script>
+        function displayTime() {
+            // Get the current time, date, and day
+            var currentTime = new Date();
+            var currentHour = currentTime.getHours();
+            var currentMinute = currentTime.getMinutes();
+            var currentSecond = currentTime.getSeconds();
+            var currentDate = currentTime.toDateString();
+            var currentDay = currentTime.getDay();
+
+            // Convert the hour, minute, and second to a 12-hour format
+            currentHour = (currentHour > 12) ? currentHour - 12 : currentHour;
+            currentHour = (currentHour == 0) ? 12 : currentHour;
+            currentMinute = (currentMinute < 10 ? "0" : "") + currentMinute;
+            currentSecond = (currentSecond < 10 ? "0" : "") + currentSecond;
+
+            // Get the name of the day
+            var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var currentDayName = dayNames[currentDay];
+
+            // Update the header with the current time, date, and day
+            document.getElementById("time").innerHTML = currentHour + ":" + currentMinute + ":" + currentSecond;
+            document.getElementById("date").innerHTML = currentDate;
+            document.getElementById("day").innerHTML = currentDayName;
+        }
+
+        // Call the displayTime function every 1000 milliseconds (1 second)
+        setInterval(displayTime, 1000);
+    </script>
+</head>
+<button class="well-designed-button">Back</button>
+<button class="well-designed-button">Button 2</button>
+
+<!-- <input type="button" class="display-img" value="img2.jpg" style="float: right;"> -->
+<h4 class="heading-line">My Blog</h4>
+<img src="header.png" width="35" height="35" position="center" />
+
+<hr class="new3">
+
+<style>
+    /* Style the button to look like a normal button when not clicked */
+    .clickable-button {
+        background-color: rgb(36, 32, 32);
+        border: 1px solid rgb(29, 2, 2);
+        padding: 10px 20px;
+        color: rgb(251, 110, 110);
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    /* Style the button to look "clicked" when clicked */
+    .clickable-button.clicked {
+        background-color: rgb(1, 0, 0);
+        color: rgba(250, 6, 6, 0.839);
+        font-weight: bold;
+    }
+</style>
+
+<button class="clickable-button">-Button--</button>
+
+<script>
+    // Get a reference to the button
+    const button = document.querySelector('.clickable-button');
+
+    // Add an event listener for the click event
+    button.addEventListener('click', function () {
+        // Toggle the "clicked" class on the button
+        button.classList.toggle('clicked');
+    });
+</script>
+
+<style>
+    .heading-line {
+        border-bottom: 135px solid #b34805 width: 200px;
+        text-align: center;
+    }
+
+    /* Add some styling for the blog page */
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .image-container img {
+        max-width: 800px;
+        height: auto;
+        margin: 20px;
+    }
+
+    .lock-button {
+        display: block;
+        width: 250px;
+        height: 125px;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        background-color: #000000;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .lock-button:hover {
+        background-color: #58e040;
+        background-image: url(background3.gif);
+    }
+    }
+</style>
 </head>
 <script src="password.js"></script>
-<p style="background-image: url('background.jpg');"></p>
 
 <body>
+
+
+    <div class="display-time"></div>
+
+    <div class="display-time:hover"></div>
+
+    <a href="https://www.youtube.com/watch?v=cka9IUcyyPM&ab_channel=CalmRelaxingmusic">A song</a>
+    <embed src="https://www.youtube.com/watch?v=cka9IUcyyPM&ab_channel=CalmRelaxingmusic" loop="true" autostart="true"
+        width="2" height="0">
+    <h1 id="time"></h1>
+    <h1 id="date"></h1>
+    <h1 id="day"></h1>
+
+
     <!-- Lock overlay -->
     <div id="lock-overlay">
         <div class="container">
-            <h1>This page is locked</h1>
+            <h1>Hey</h1>
+            <button type="button" onclick="checkPassword()" class="lock-button">Hover to unlock</button>
+        </div>
+    </div>
+    <div id="lock-overlay">
+        <div class="container">
             <button type="button" onclick="checkPassword()" class="lock-button">Unlock Page</button>
         </div>
     </div>
+    <h1>__</h1>
+
+    <body style="background-color:rgb(3, 6, 6);">
+
+
+
+    </body>
 
     <div class="container">
-        <h1>My Blog</h1>
+        <h2>MY BLOG </h2>
+        <img src="background.jpg" width="400" height="500" />
+        <!-- Video 1 -->
+
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit risus
+        pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin in,
+        efficitur a justo. Duis id ultricies tellus, vel sodales odio. In hac habitasse platea dictumst. Suspendisse
+        potenti. Vivamus id ultricies elit, a condimentum elit. Proin porttitor metus sed justo fringilla, id
+        egestas lacus luctus. Maecenas vitae nulla non tellus sollicitudin dictum. Aliquam euismod, ipsum a aliquam
+        dignissim, arcu ligula cursus purus, in gravida tellus lacus non ante. Duis sit amet dictum velit.</p>
+
+    <!-- Image 1 -->
+    <div class="image-container">
+        <img src="1.webp"> /alt="Image 1">
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit risus
+        pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin in,
+        efficitur a justo. Duis id ultricies tellus, vel sodales odio. In </p>
+    <div class="container">
+        <h1>Additional </h1>
+        <h1>____________</h1>
 
         <!-- Video 1 -->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/watch?v=Okve5wSmg-s&ab_channel=RoyaltyFreeMusic-NoCopyrightMusic"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+        <div class="image-container">
+            <img src="img2.jpg" alt="Image 1">
+
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit risus
-            pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin in,
-            efficitur a justo. Duis id ultricies tellus, vel sodales odio. In hac habitasse platea dictumst. Suspendisse
-            potenti. Vivamus id ultricies elit, a condimentum elit. Proin porttitor metus sed justo fringilla, id
-            egestas lacus luctus. Maecenas vitae nulla non tellus sollicitudin dictum. Aliquam euismod, ipsum a aliquam
-            dignissim, arcu ligula cursus purus, in gravida tellus lacus non ante. Duis sit amet dictum velit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit
+            risus pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin
+            in, efficitur a justo. Duis id ultricies tellus, vel sodales odio. In hac habitasse platea dictumst.
+            Suspendisse potenti. Vivamus id ultricies elit, a condimentum elit. Proin porttitor metus sed justo
+            fringilla, id egestas lacus luctus. Maecenas vitae nulla non tellus sollicitudin dictum. Aliquam
+            euismod, ipsum a aliquam dignissim, arcu ligula cursus purus, in gravida tellus lacus non ante. Duis sit
+            amet dictum velit.</p>
 
         <!-- Image 1 -->
         <div class="image-container">
-            <img src="1.webp" alt="Image 1">
+            <img src="bg.gif" alt="Image 1">
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit risus
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit ris
+            <!-- Image 1 -->
+        <div class="image-container">
+            <img src="img5.gif" alt="Image 1">
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit
+            risus
             pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin in,
             efficitur a justo. Duis id ultricies tellus, vel sodales odio. In </p>
         <div class="container">
-            <h1>My Blog</h1>
-
-            <!-- Video 1 -->
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit
-                risus pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin
-                in, efficitur a justo. Duis id ultricies tellus, vel sodales odio. In hac habitasse platea dictumst.
-                Suspendisse potenti. Vivamus id ultricies elit, a condimentum elit. Proin porttitor metus sed justo
-                fringilla, id egestas lacus luctus. Maecenas vitae nulla non tellus sollicitudin dictum. Aliquam
-                euismod, ipsum a aliquam dignissim, arcu ligula cursus purus, in gravida tellus lacus non ante. Duis sit
-                amet dictum velit.</p>
-
+            <h1>.</h1>
             <!-- Image 1 -->
             <div class="image-container">
-                <img src="2.webp" alt="Image 1">
+                <img src="img4.gif" alt="Image 1">
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit ris
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare tincidunt, velit
+                risus
+                pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at sollicitudin in,
+                efficitur a justo. Duis id ultricies tellus, vel sodales odio. In </p>
+            <div class="container">
+
+
+
+                <h1>_________________________________________________ </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1>.</h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1>.</h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1>.</h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1>.</h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <h1>.</h1>
+                <h1> .</h1>
+                <h1>. </h1>
+                <h1> . </h1>
+                <div class="container">
+                    <h2>MY BLOG </h2>
+                    <!-- Video 1 -->
+
+                </div>
+
+                <!-- Image 1 -->
+                <video width="320" height="240" controls>
+                    <source src="vid3.mp4" type="mp4">
+            </div>
+            <div class="display-time"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta, magna a ornare
+                tincidunt, velit risus
+                pharetra nibh, in condimentum massa neque sed arcu. Proin mauris massa, dapibus at
+                sollicitudin in,
+                efficitur a justo. Duis id ultricies tellus, vel sodales odio. In hac habitasse platea
+                dictumst. Suspendisse
+                potenti. Vivamus id ultricies elit, a condimentum elit. Proin porttitor metus sed justo
+                fringilla, id
+                egestas lacus luctus. Maecenas vitae nulla non tellus sollicitudin dictum. Aliquam euismod,
+                ipsum a aliquam
+                dignissim, arcu ligula cursus purus, in gravida tellus lacus non ante. Duis sit amet dictum
+                velit.</p>
+        </div>
+        </p>
+    </div>
+</body>
+
+</html>

@@ -1,5 +1,77 @@
-<style>
-p {
-  background-image: url('background.jpg');
+
+html {
+  font-size: 62.5%;
+  background: url(background.jpg) repeat fixed; 
+
+
+  background-size: cover;
 }
-</style>
+h1 {
+  text-shadow: 3px 2px #000000;
+  color:55px 55px #bd6a06;
+} 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #f80a0a;
+  color: #d3770edb;
+  
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.display-date {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 75%;
+  font-weight: 600;
+}
+
+.display-time {
+  display: flex;
+  font-size: 5rem;
+  font-weight: bold;
+  border: 2px solid #ffd868;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: ease-in-out 0.1s;
+  transition-property: box-shadow, color;
+  -webkit-box-reflect: below 2px
+    linear-gradient(transparent, rgba(255, 255, 255, 0.05));
+}
+
+.display-time:hover {
+  background: #ffd868;
+  box-shadow: 0 0 30px#ffd868;
+  color: #272727;
+  cursor: pointer;
+
+}
+.well-designed-button {
+  background;   
+  font-size: 90%;
+  font-weight: bold;
+  display: flex;
+  transition: ease-in-out 0.1s;
+  background: #ffd868;
+  box-shadow: 0 0 30px#ffd868;
+  color: #272727;
+  cursor: pointer;
+  position: right;
+  }
+  
+  .well-designed-button:hover {
+    box-shadow: 0 0 10px #e368ff;
+  }
+  button {
+    background-image: url('path/to/gif.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
