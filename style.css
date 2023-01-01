@@ -1,30 +1,47 @@
-
+/* Global */
 html {
   font-size: 62.5%;
-  background: url(background.jpg) repeat fixed; 
-
-
+  background: url(background.jpg) repeat fixed;
   background-size: cover;
 }
+
 h1 {
   text-shadow: 3px 2px #000000;
-  color:55px 55px #bd6a06;
-} 
+  color: 55px 55px #bd6a06;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: inherit;
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   background: #f80a0a;
   color: #d3770edb;
-  
+
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+p {
+  font-size: 16px;
+  color: white;
+}
+
+/* helpers */
+.center-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Colors */
+.color-white {
+  color: white;
 }
 
 .display-date {
@@ -52,10 +69,8 @@ body {
   box-shadow: 0 0 30px#ffd868;
   color: #272727;
   cursor: pointer;
-
 }
 .well-designed-button {
-  background;   
   font-size: 90%;
   font-weight: bold;
   display: flex;
@@ -65,13 +80,62 @@ body {
   color: #272727;
   cursor: pointer;
   position: right;
-  }
-  
-  .well-designed-button:hover {
-    box-shadow: 0 0 10px #e368ff;
-  }
-  button {
-    background-image: url('path/to/gif.gif');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+}
+
+.well-designed-button:hover {
+  box-shadow: 0 0 10px #e368ff;
+}
+button {
+  background-image: url('path/to/gif.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Images */
+.image-container {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.banner-text {
+  opacity: 0 !important;
+  position: absolute;
+  top: 0;
+  right: -128px;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: white;
+  width: 100%;
+  max-width: 256px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container:hover .banner-text {
+  opacity: 1 !important;
+}
+
+.banner-text img {
+  width: 100%;
+  height: auto;
+}
+
+.banner-text h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #121212;
+  margin-bottom: 16px;
+  pointer-events: none;
+}
+
+.banner-text p {
+  font-size: 16px;
+  color: #121212;
+  pointer-events: none;
+}
